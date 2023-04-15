@@ -30,7 +30,7 @@ function RunSource {
 		exit
 	fi
 	rm -f nc.txt kk.txt
-	nc -c $host $port < $infile | grep -v "Date: " > nc.txt
+	nc -C $host $port < $infile | grep -v "Date: " > nc.txt
 	grep -v "Date: " $outfile > kk.txt
 	diff nc.txt kk.txt 
 }
