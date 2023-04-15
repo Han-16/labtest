@@ -1,4 +1,3 @@
-vi deploycc.sh
 set -e
 cname=$1
 
