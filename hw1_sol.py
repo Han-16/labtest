@@ -21,6 +21,6 @@ message = ''.join(sentences)
 
 clientSocket.send(message.encode())
 
-data = clientSocket.recv(1024)
-print('Received', data.decode())
+data = clientSocket.recv(2048)
+print(data.decode(), end = "")
 clientSocket.close()
