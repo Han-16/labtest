@@ -20,7 +20,9 @@ sentences.append("\r\n")
 message = ''.join(sentences)
 
 clientSocket.send(message.encode())
-
-data = clientSocket.recv(2048)
-print(data.decode(), end = "")
+while True:
+    data = clientSocket.recv(2048)
+    if not data:
+        break
+    print(data.decode(), end = "")
 clientSocket.close()
